@@ -8,7 +8,7 @@
 
 **Database Setup:**
 - Use PostgreSQL as the database.
-- Schema: "users"
+- table: "users"
 - Fields: id, first_name, last_name, password, and username.
 - Ensure username uniqueness with a unique constraint.
 - Create an index for faster username lookups.
@@ -20,10 +20,10 @@
 ```sql
 create table users (
     id bigserial not null,
-    first_name varchar(255) not null,
-    last_name varchar(255) not null,
+    first_name varchar(36) not null,
+    last_name varchar(36) not null,
     password varchar(255) not null,
-    username varchar(255) unique,
+    username varchar(36) unique,
     primary key (id)
 );
 CREATE INDEX idx_username ON users (username);
